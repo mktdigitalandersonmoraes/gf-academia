@@ -9,7 +9,7 @@ const locations = [
   { name: 'Missionária', image: '/images/unidade-missionaria.jpg' },
   { name: 'Yervant' },
   { name: 'São Jorge' },
-  { name: 'Apurá', image: '/images/unidade-apura.png', objectPosition: 'center center' },
+  { name: 'Apurá', image: '/images/unidade-apura.png', objectPosition: '35% center' },
   { name: 'Canhema' },
 ]
 
