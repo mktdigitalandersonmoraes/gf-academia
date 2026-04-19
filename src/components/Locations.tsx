@@ -6,7 +6,7 @@ import { staggerContainer, staggerItem } from '../lib/animations'
 
 /** Lista de unidades */
 const locations = [
-  { name: 'Missionária', image: '/images/unidade-missionaria.png?v=2' },
+  { name: 'Missionária', image: '/images/unidade-missionaria.jpg' },
   { name: 'Yervant' },
   { name: 'São Jorge' },
   { name: 'Apurá' },
