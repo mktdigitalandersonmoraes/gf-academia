@@ -9,7 +9,7 @@ const locations = [
   { name: 'Missionária', image: '/images/unidade-missionaria.jpg' },
   { name: 'Yervant' },
   { name: 'São Jorge' },
-  { name: 'Apurá', image: '/images/unidade-apura.png' },
+  { name: 'Apurá', image: '/images/unidade-apura.png', objectPosition: '75% center' },
   { name: 'Canhema' },
 ]
 
@@ -50,6 +50,7 @@ export default function Locations() {
                     src={location.image}
                     alt={`Unidade ${location.name}`}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    style={{ objectPosition: (location as { name: string; image?: string; objectPosition?: string }).objectPosition ?? 'center center' }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent opacity-40 group-hover:opacity-20 transition-opacity duration-500" />
                 </div>
