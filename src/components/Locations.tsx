@@ -66,9 +66,6 @@ export default function Locations() {
                 <h3 className="font-heading font-bold text-xl text-white">
                   {location.name}
                 </h3>
-                <p className="text-primary text-sm font-medium mt-1">
-                  Unidade GF
-                </p>
               </div>
             </motion.div>
           ))}
