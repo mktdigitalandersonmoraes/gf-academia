@@ -52,8 +52,8 @@ export default function Footer() {
         {/* Grid principal */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Logo e descrição */}
-          <div className="lg:col-span-1">
-            <a href="#inicio" className="flex items-center mb-6 group">
+          <div className="lg:col-span-1 flex flex-col items-center lg:items-start text-center lg:text-left">
+            <a href="#inicio" className="flex items-center justify-center mb-6 group">
               <img 
                 src="/images/logo.png" 
                 alt="GF Academia" 
@@ -61,8 +61,7 @@ export default function Footer() {
               />
             </a>
             <p className="text-muted-text text-sm leading-relaxed mb-6">
-              Transformando vidas através do esporte e do bem-estar há mais de 15
-              anos. Sua evolução começa aqui.
+              GF Academia - Onde o cuidado e o resultado caminham juntos!
             </p>
             {/* Redes sociais */}
             <div className="flex gap-3">
