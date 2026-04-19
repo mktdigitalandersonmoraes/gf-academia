@@ -6,7 +6,7 @@ import { staggerContainer, staggerItem } from '../lib/animations'
 
 /** Lista de unidades */
 const locations = [
-  { name: 'Missionária' },
+  { name: 'Missionária', image: '/images/unidade-missionaria.png' },
   { name: 'Yervant' },
   { name: 'São Jorge' },
   { name: 'Apurá' },
@@ -43,11 +43,22 @@ export default function Locations() {
               variants={staggerItem}
               className="group relative rounded-3xl overflow-hidden glass-card hover:border-primary/20 transition-all duration-500"
             >
-              {/* Placeholder para foto futura */}
-              <div className="relative h-64 bg-dark-lighter/50 flex flex-col items-center justify-center border-b border-white/5">
-                <MapPin size={40} className="text-muted-text/30 mb-3" />
-                <span className="text-sm font-medium text-muted-text/50">Foto em breve</span>
-              </div>
+              {/* Foto ou Placeholder */}
+              {location.image ? (
+                <div className="relative h-64 overflow-hidden border-b border-white/5">
+                  <img
+                    src={location.image}
+                    alt={`Unidade ${location.name}`}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent opacity-40 group-hover:opacity-20 transition-opacity duration-500" />
+                </div>
+              ) : (
+                <div className="relative h-64 bg-dark-lighter/50 flex flex-col items-center justify-center border-b border-white/5">
+                  <MapPin size={40} className="text-muted-text/30 mb-3" />
+                  <span className="text-sm font-medium text-muted-text/50">Foto em breve</span>
+                </div>
+              )}
 
               {/* Info da Unidade */}
               <div className="p-6 text-center">
