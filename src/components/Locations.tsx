@@ -1,0 +1,67 @@
+import { motion } from 'framer-motion'
+import { MapPin } from 'lucide-react'
+import SectionHeading from './SectionHeading'
+import { useSectionInView } from '../hooks/useSectionInView'
+import { staggerContainer, staggerItem } from '../lib/animations'
+
+/** Lista de unidades */
+const locations = [
+  { name: 'Missionária' },
+  { name: 'Yervant' },
+  { name: 'São Jorge' },
+  { name: 'Apurá' },
+  { name: 'Canhema' },
+]
+
+/**
+ * Locations — Seção das unidades da academia.
+ */
+export default function Locations() {
+  const { ref, isInView } = useSectionInView(0.1)
+
+  return (
+    <section id="unidades" className="py-24 lg:py-32 relative">
+      <div className="section-divider mb-24" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <SectionHeading
+          label="Unidades"
+          title="Nossas Unidades"
+          description="Cada unidade pensando no seu bem-estar e desenvolvimento."
+        />
+
+        <motion.div
+          ref={ref}
+          variants={staggerContainer}
+          initial="hidden"
+          animate={isInView ? 'visible' : 'hidden'}
+          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 max-w-5xl mx-auto"
+        >
+          {locations.map((location) => (
+            <motion.div
+              key={location.name}
+              variants={staggerItem}
+              className="group relative rounded-3xl overflow-hidden glass-card hover:border-primary/20 transition-all duration-500"
+            >
+              {/* Placeholder para foto futura */}
+              <div className="relative h-64 bg-dark-lighter/50 flex flex-col items-center justify-center border-b border-white/5">
+                <MapPin size={40} className="text-muted-text/30 mb-3" />
+                <span className="text-sm font-medium text-muted-text/50">Foto em breve</span>
+              </div>
+
+              {/* Info da Unidade */}
+              <div className="p-6 text-center">
+                <h3 className="font-heading font-bold text-xl text-white">
+                  {location.name}
+                </h3>
+                <p className="text-primary text-sm font-medium mt-1">
+                  Unidade GF
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  )
+}

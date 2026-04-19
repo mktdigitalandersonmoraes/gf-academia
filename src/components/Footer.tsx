@@ -8,14 +8,14 @@ const footerLinks = {
   academia: [
     { label: 'Sobre Nós', href: '#sobre' },
     { label: 'Nossos Planos', href: '#planos' },
-    { label: 'Equipe', href: '#equipe' },
+    { label: 'Unidades', href: '#unidades' },
     { label: 'Depoimentos', href: '#depoimentos' },
     { label: 'Contato', href: '#contato' },
   ],
   servicos: [
     { label: 'Musculação', href: '#planos' },
     { label: 'Funcional', href: '#planos' },
-    { label: 'Personal Trainer', href: '#equipe' },
+    { label: 'Unidades', href: '#unidades' },
     { label: 'Aulas em Grupo', href: '#planos' },
     { label: 'Nutrição', href: '#planos' },
   ],
