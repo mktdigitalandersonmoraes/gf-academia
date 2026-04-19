@@ -43,13 +43,12 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="#inicio" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center font-heading font-black text-white text-lg group-hover:scale-110 transition-transform duration-300">
-              GF
-            </div>
-            <span className="font-heading font-bold text-xl text-white">
-              Academia
-            </span>
+          <a href="#inicio" className="flex items-center group">
+            <img 
+              src="/images/logo.png" 
+              alt="GF Academia" 
+              className="h-12 w-auto group-hover:scale-105 transition-transform duration-300"
+            />
           </a>
 
           {/* Links Desktop */}

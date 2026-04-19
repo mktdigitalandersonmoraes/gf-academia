@@ -53,13 +53,12 @@ export default function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Logo e descrição */}
           <div className="lg:col-span-1">
-            <a href="#inicio" className="flex items-center gap-2 mb-6 group">
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center font-heading font-black text-white text-lg group-hover:scale-110 transition-transform duration-300">
-                GF
-              </div>
-              <span className="font-heading font-bold text-xl text-white">
-                Academia
-              </span>
+            <a href="#inicio" className="flex items-center mb-6 group">
+              <img 
+                src="/images/logo.png" 
+                alt="GF Academia" 
+                className="h-16 w-auto group-hover:scale-105 transition-transform duration-300"
+              />
             </a>
             <p className="text-muted-text text-sm leading-relaxed mb-6">
               Transformando vidas através do esporte e do bem-estar há mais de 15
