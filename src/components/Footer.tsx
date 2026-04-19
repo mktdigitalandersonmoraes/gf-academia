@@ -57,7 +57,7 @@ export default function Footer() {
               <img 
                 src="/images/logo.png" 
                 alt="GF Academia" 
-                className="h-[100px] w-auto group-hover:scale-105 transition-transform duration-300"
+                className="h-[120px] w-auto group-hover:scale-105 transition-transform duration-300"
               />
             </a>
             <p className="text-muted-text text-sm leading-relaxed mb-6">
