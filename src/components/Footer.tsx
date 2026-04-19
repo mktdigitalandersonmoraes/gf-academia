@@ -52,12 +52,12 @@ export default function Footer() {
         {/* Grid principal */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Logo e descrição */}
-          <div className="lg:col-span-1 flex flex-col items-center lg:items-start text-center lg:text-left">
+          <div className="lg:col-span-1 flex flex-col items-center text-center">
             <a href="#inicio" className="flex items-center justify-center mb-6 group">
               <img 
                 src="/images/logo.png" 
                 alt="GF Academia" 
-                className="h-[120px] w-auto group-hover:scale-105 transition-transform duration-300"
+                className="h-[240px] w-auto group-hover:scale-105 transition-transform duration-300"
               />
             </a>
             <p className="text-muted-text text-sm leading-relaxed mb-6">
