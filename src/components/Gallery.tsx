@@ -28,42 +28,42 @@ const mockGalleryItems: GalleryItem[] = [
     type: 'photo',
     unit: 'Missionária',
     title: 'Musculação',
-    src: '/images/missionaria/musculacao-1.jpg',
+    src: '/images/missionaria/musculacao-1.webp',
   },
   {
     id: 2,
     type: 'photo',
     unit: 'Missionária',
     title: 'Musculação',
-    src: '/images/missionaria/musculacao-2.jpg',
+    src: '/images/missionaria/musculacao-2.webp',
   },
   {
     id: 4,
     type: 'photo',
     unit: 'Missionária',
     title: 'Área Cardio',
-    src: '/images/missionaria/cardio-1.jpg',
+    src: '/images/missionaria/cardio-1.webp',
   },
   {
     id: 6,
     type: 'photo',
     unit: 'Missionária',
     title: 'Área Cardio',
-    src: '/images/missionaria/cardio-3.jpg',
+    src: '/images/missionaria/cardio-3.webp',
   },
   {
     id: 7,
     type: 'photo',
     unit: 'Missionária',
     title: 'Área Funcional',
-    src: '/images/missionaria/funcional-1.jpg',
+    src: '/images/missionaria/funcional-1.webp',
   },
   {
     id: 8,
     type: 'photo',
     unit: 'Missionária',
     title: 'Área Funcional',
-    src: '/images/missionaria/funcional-2.jpg',
+    src: '/images/missionaria/funcional-2.webp',
   },
   // Outras unidades foram removidas temporariamente conforme solicitado
 ]
@@ -171,6 +171,8 @@ export default function Gallery() {
                       src={item.src}
                       alt={item.title}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      loading="lazy"
+                      decoding="async"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
                     

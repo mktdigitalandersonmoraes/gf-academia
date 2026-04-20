@@ -55,9 +55,11 @@ export default function Footer() {
           <div className="lg:col-span-1 flex flex-col items-center text-center mt-2">
             <a href="#inicio" className="inline-block mb-3 group">
               <img 
-                src="/images/logo-novo.png" 
+                src="/images/logo-novo.webp" 
                 alt="GF Academia" 
                 className="w-[150px] max-w-none h-auto object-contain group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+                decoding="async"
               />
             </a>
             <p className="text-muted-text text-sm leading-relaxed mb-6">

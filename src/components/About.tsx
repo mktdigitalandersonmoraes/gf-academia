@@ -40,9 +40,11 @@ export default function About() {
           >
             <div className="relative rounded-2xl overflow-hidden group">
               <img
-                src="/images/about-gym.png"
+                src="/images/about-gym.webp"
                 alt="Interior da GF Academia"
                 className="w-full h-[400px] lg:h-[500px] object-cover group-hover:scale-105 transition-transform duration-700"
+                loading="lazy"
+                decoding="async"
               />
               {/* Overlay com gradiente */}
               <div className="absolute inset-0 bg-gradient-to-t from-dark/60 to-transparent" />

@@ -45,9 +45,11 @@ export default function Navbar() {
           {/* Logo */}
           <a href="#inicio" className="flex items-center group">
             <img 
-              src="/images/logo-novo.png" 
+              src="/images/logo-novo.webp" 
               alt="GF Academia" 
               className="w-[120px] h-auto group-hover:scale-105 transition-transform duration-300"
+              loading="lazy"
+              decoding="async"
             />
           </a>
 

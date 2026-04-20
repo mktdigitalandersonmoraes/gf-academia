@@ -5,19 +5,19 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'
 /** Slides do carrossel hero */
 const slides = [
   {
-    image: '/images/hero-1.png',
+    image: '/images/hero-1.webp',
     headline: 'Transforme Seu Corpo,\nTransforme Sua Vida',
     subheadline:
       'A GF Academia oferece o melhor ambiente para você alcançar seus objetivos. Equipamentos de última geração e profissionais qualificados.',
   },
   {
-    image: '/images/hero-2.png',
+    image: '/images/hero-2.webp',
     headline: 'Supere Seus\nLimites Todo Dia',
     subheadline:
       'Treinos personalizados, acompanhamento profissional e uma comunidade que te motiva a ir além. Comece sua jornada agora.',
   },
   {
-    image: '/images/hero-3.png',
+    image: '/images/hero-3.webp',
     headline: 'Sua Melhor Versão\nComeça Aqui',
     subheadline:
       'Aulas em grupo, musculação, funcional e muito mais. Encontre o treino perfeito para o seu estilo de vida.',

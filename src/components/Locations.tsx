@@ -8,12 +8,12 @@ import { staggerContainer, staggerItem } from '../lib/animations'
 const locations = [
   { 
     name: 'Missionária', 
-    image: '/images/unidade-missionaria.jpg',
+    image: '/images/unidade-missionaria.webp',
     whatsapp: 'https://api.whatsapp.com/send/?phone=5511944786613&text&type=phone_number&app_absent=0'
   },
   { 
     name: 'Yervant',
-    image: '/images/unidade-yervant.png',
+    image: '/images/unidade-yervant.webp',
     whatsapp: 'https://api.whatsapp.com/send?phone=5511997710042&text=Ol%C3%A1%2C+Gostaria+de+receber+mais+informa%C3%A7%C3%B5es'
   },
   { 
@@ -22,13 +22,13 @@ const locations = [
   },
   { 
     name: 'Apurá', 
-    image: '/images/unidade-apura.png', 
+    image: '/images/unidade-apura.webp', 
     objectPosition: '35% center',
     whatsapp: 'https://api.whatsapp.com/send?phone=5511998776895&text=Ol%C3%A1%2C+Gostaria+de+receber+mais+informa%C3%A7%C3%B5es.'
   },
   {
     name: 'Canhema',
-    image: '/images/unidade-canhema.jpg',
+    image: '/images/unidade-canhema.webp',
     preVenda: true,
     preVendaPrice: 'R$ 49,99',
     whatsapp: 'https://api.whatsapp.com/send?phone=5511956308853&text=Ol%C3%A1%2C+Gostaria+de+receber+mais+informa%C3%A7%C3%B5es',
@@ -73,6 +73,8 @@ export default function Locations() {
                     alt={`Unidade ${location.name}`}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     style={{ objectPosition: (location as any).objectPosition ?? 'center center' }}
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent opacity-40 group-hover:opacity-20 transition-opacity duration-500" />
                   {/* Badge Pré-Venda */}
