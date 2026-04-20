@@ -79,85 +79,24 @@ const mockGalleryItems: GalleryItem[] = [
     title: 'Área Funcional',
     src: '/images/missionaria/funcional-2.jpg',
   },
-  // Canhema
-  {
-    id: 9,
-    type: 'photo',
-    unit: 'Canhema',
-    title: 'Área de Musculação',
-    src: 'https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=80&w=1470&auto=format&fit=crop',
-  },
-  {
-    id: 10,
-    type: 'video',
-    unit: 'Canhema',
-    title: 'Aulas',
-    src: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-  },
-  // Apurá
-  {
-    id: 11,
-    type: 'photo',
-    unit: 'Apurá',
-    title: 'Área de Musculação',
-    src: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=1470&auto=format&fit=crop',
-  },
-  {
-    id: 12,
-    type: 'photo',
-    unit: 'Apurá',
-    title: 'Aulas',
-    src: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1520&auto=format&fit=crop',
-  },
-  // São Jorge
-  {
-    id: 13,
-    type: 'photo',
-    unit: 'São Jorge',
-    title: 'Área de Musculação',
-    src: 'https://images.unsplash.com/photo-1576678927484-cc907957088c?q=80&w=1374&auto=format&fit=crop',
-  },
-  {
-    id: 14,
-    type: 'photo',
-    unit: 'São Jorge',
-    title: 'Aulas',
-    src: 'https://images.unsplash.com/photo-1538805060514-97d9cc17730c?q=80&w=1374&auto=format&fit=crop',
-  },
-  // Yervant
-  {
-    id: 15,
-    type: 'photo',
-    unit: 'Yervant',
-    title: 'Área de Musculação',
-    src: 'https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=1470&auto=format&fit=crop',
-  },
-  {
-    id: 16,
-    type: 'video',
-    unit: 'Yervant',
-    title: 'Aulas',
-    src: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-  },
+  // Outras unidades foram removidas temporariamente conforme solicitado
 ]
 
-/** Categorias disponíveis para o filtro */
-const filters = ['Todas', 'Fotos', 'Vídeos', 'Missionária', 'Canhema', 'Apurá', 'São Jorge', 'Yervant']
+/** Unidades disponíveis para o filtro */
+const units = ['Missionária', 'Canhema', 'Apurá', 'São Jorge', 'Yervant']
 
 /**
  * Gallery — Nova seção de galeria de fotos e vídeos.
  */
 export default function Gallery() {
   const { ref, isInView } = useSectionInView(0.1)
-  const [activeFilter, setActiveFilter] = useState('Todas')
+  const [activeUnit, setActiveUnit] = useState('Missionária')
+  const [activeType, setActiveType] = useState<MediaType>('photo')
 
-  // Filtra os itens com base no filtro selecionado
-  const filteredItems = mockGalleryItems.filter((item) => {
-    if (activeFilter === 'Todas') return true
-    if (activeFilter === 'Fotos') return item.type === 'photo'
-    if (activeFilter === 'Vídeos') return item.type === 'video'
-    return item.unit === activeFilter
-  })
+  // Filtra os itens com base na unidade e no tipo de mídia
+  const filteredItems = mockGalleryItems.filter(
+    (item) => item.unit === activeUnit && item.type === activeType
+  )
 
   return (
     <section id="galeria" className="py-24 lg:py-32 bg-dark-lighter relative">
@@ -170,27 +109,58 @@ export default function Gallery() {
           description="Explore nossas unidades, equipamentos de ponta e o ambiente feito para o seu resultado."
         />
 
-        {/* Sistema de Filtros */}
+        {/* Sistema de Filtros (Unidades) */}
         <motion.div
           ref={ref}
           variants={fadeInUp}
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
-          className="flex flex-wrap justify-center gap-3 mt-12 mb-16"
+          className="flex flex-wrap justify-center gap-3 mt-12 mb-8"
         >
-          {filters.map((filter) => (
+          {units.map((unit) => (
             <button
-              key={filter}
-              onClick={() => setActiveFilter(filter)}
+              key={unit}
+              onClick={() => setActiveUnit(unit)}
               className={`px-6 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${
-                activeFilter === filter
+                activeUnit === unit
                   ? 'bg-primary text-dark shadow-lg shadow-primary/30 scale-105'
                   : 'bg-dark-card border border-dark-border text-muted-text hover:text-white hover:border-primary/50'
               }`}
             >
-              {filter}
+              {unit}
             </button>
           ))}
+        </motion.div>
+
+        {/* Sub-filtro (Fotos / Vídeos) */}
+        <motion.div
+          variants={fadeInUp}
+          initial="hidden"
+          animate={isInView ? 'visible' : 'hidden'}
+          className="flex justify-center gap-4 mb-16"
+        >
+          <button
+            onClick={() => setActiveType('photo')}
+            className={`flex items-center gap-2 px-5 py-2.5 rounded-xl font-medium transition-colors ${
+              activeType === 'photo'
+                ? 'bg-dark-border text-white'
+                : 'text-muted-text hover:text-white hover:bg-dark-card'
+            }`}
+          >
+            <ImageIcon size={18} />
+            Fotos
+          </button>
+          <button
+            onClick={() => setActiveType('video')}
+            className={`flex items-center gap-2 px-5 py-2.5 rounded-xl font-medium transition-colors ${
+              activeType === 'video'
+                ? 'bg-dark-border text-white'
+                : 'text-muted-text hover:text-white hover:bg-dark-card'
+            }`}
+          >
+            <Play size={18} />
+            Vídeos
+          </button>
         </motion.div>
 
         {/* Grid da Galeria */}
