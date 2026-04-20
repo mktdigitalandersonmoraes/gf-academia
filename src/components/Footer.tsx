@@ -9,7 +9,7 @@ const footerLinks = {
     { label: 'Sobre Nós', href: '#sobre' },
     { label: 'Nossos Planos', href: '#planos' },
     { label: 'Unidades', href: '#unidades' },
-    { label: 'Depoimentos', href: '#depoimentos' },
+    { label: 'Galeria', href: '#galeria' },
     { label: 'Contato', href: '#contato' },
   ],
   servicos: [
@@ -52,19 +52,19 @@ export default function Footer() {
         {/* Grid principal */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Logo e descrição */}
-          <div className="lg:col-span-1 flex flex-col items-start text-left mt-[-20px]">
-            <a href="#inicio" className="inline-block mb-3 group -ml-6">
+          <div className="lg:col-span-1 flex flex-col items-center text-center mt-2">
+            <a href="#inicio" className="inline-block mb-3 group">
               <img 
-                src="/images/logo.png" 
+                src="/images/logo-novo.png" 
                 alt="GF Academia" 
-                className="w-[280px] max-w-none h-auto object-contain object-left group-hover:scale-105 transition-transform duration-300"
+                className="w-[150px] max-w-none h-auto object-contain group-hover:scale-105 transition-transform duration-300"
               />
             </a>
             <p className="text-muted-text text-sm leading-relaxed mb-6">
               GF Academia - Onde o cuidado e o resultado caminham juntos!
             </p>
             {/* Redes sociais */}
-            <div className="flex gap-3">
+            <div className="flex gap-3 justify-center">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}

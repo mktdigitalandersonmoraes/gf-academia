@@ -3,7 +3,7 @@ import Hero from './components/Hero'
 import About from './components/About'
 import Services from './components/Services'
 import Locations from './components/Locations'
-import Testimonials from './components/Testimonials'
+import Gallery from './components/Gallery'
 import CallToAction from './components/CallToAction'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
@@ -20,7 +20,7 @@ function App() {
         <About />
         <Services />
         <Locations />
-        <Testimonials />
+        <Gallery />
         <CallToAction />
         <Contact />
       </main>

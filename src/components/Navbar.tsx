@@ -8,7 +8,7 @@ const navLinks = [
   { label: 'Sobre', href: '#sobre' },
   { label: 'Planos', href: '#planos' },
   { label: 'Unidades', href: '#unidades' },
-  { label: 'Depoimentos', href: '#depoimentos' },
+  { label: 'Galeria', href: '#galeria' },
   { label: 'Contato', href: '#contato' },
 ]
 
@@ -45,9 +45,9 @@ export default function Navbar() {
           {/* Logo */}
           <a href="#inicio" className="flex items-center group">
             <img 
-              src="/images/logo.png" 
+              src="/images/logo-novo.png" 
               alt="GF Academia" 
-              className="h-[120px] w-auto group-hover:scale-105 transition-transform duration-300"
+              className="w-[120px] h-auto group-hover:scale-105 transition-transform duration-300"
             />
           </a>
 
