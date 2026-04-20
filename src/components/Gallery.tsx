@@ -38,25 +38,11 @@ const mockGalleryItems: GalleryItem[] = [
     src: '/images/missionaria/musculacao-2.jpg',
   },
   {
-    id: 3,
-    type: 'photo',
-    unit: 'Missionária',
-    title: 'Musculação',
-    src: '/images/missionaria/musculacao-3.jpg',
-  },
-  {
     id: 4,
     type: 'photo',
     unit: 'Missionária',
     title: 'Área Cardio',
     src: '/images/missionaria/cardio-1.jpg',
-  },
-  {
-    id: 5,
-    type: 'photo',
-    unit: 'Missionária',
-    title: 'Área Cardio',
-    src: '/images/missionaria/cardio-2.jpg',
   },
   {
     id: 6,
