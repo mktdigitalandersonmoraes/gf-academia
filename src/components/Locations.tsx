@@ -13,7 +13,7 @@ const locations = [
   },
   { 
     name: 'Yervant',
-    image: '/images/unidade-yervant.jpg',
+    image: '/images/unidade-yervant.png',
     whatsapp: 'https://api.whatsapp.com/send?phone=5511997710042&text=Ol%C3%A1%2C+Gostaria+de+receber+mais+informa%C3%A7%C3%B5es'
   },
   { 
