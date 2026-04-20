@@ -9,6 +9,7 @@ const locations = [
   { 
     name: 'Missionária', 
     image: '/images/unidade-missionaria.webp',
+    objectPosition: 'center 20%',
     whatsapp: 'https://api.whatsapp.com/send/?phone=5511944786613&text&type=phone_number&app_absent=0'
   },
   { 
