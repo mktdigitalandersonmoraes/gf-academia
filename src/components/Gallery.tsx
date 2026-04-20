@@ -65,6 +65,49 @@ const mockGalleryItems: GalleryItem[] = [
     title: 'Área Funcional',
     src: '/images/missionaria/funcional-2.webp',
   },
+  // Yervant
+  {
+    id: 9,
+    type: 'photo',
+    unit: 'Yervant',
+    title: 'Musculação',
+    src: '/images/yervant/yervant-1.webp',
+  },
+  {
+    id: 10,
+    type: 'photo',
+    unit: 'Yervant',
+    title: 'Musculação',
+    src: '/images/yervant/yervant-2.webp',
+  },
+  {
+    id: 11,
+    type: 'photo',
+    unit: 'Yervant',
+    title: 'Musculação',
+    src: '/images/yervant/yervant-3.webp',
+  },
+  {
+    id: 12,
+    type: 'photo',
+    unit: 'Yervant',
+    title: 'Área Cardio',
+    src: '/images/yervant/yervant-4.webp',
+  },
+  {
+    id: 13,
+    type: 'photo',
+    unit: 'Yervant',
+    title: 'Área Cardio',
+    src: '/images/yervant/yervant-5.webp',
+  },
+  {
+    id: 14,
+    type: 'photo',
+    unit: 'Yervant',
+    title: 'Funcional',
+    src: '/images/yervant/yervant-6.webp',
+  },
   // Outras unidades foram removidas temporariamente conforme solicitado
 ]
 
