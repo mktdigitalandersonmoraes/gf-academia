@@ -7,7 +7,7 @@ import { fadeInLeft, fadeInRight, staggerContainer, staggerItem } from '../lib/a
 /** Números / estatísticas da academia */
 const stats = [
   { icon: Users, value: '2.500+', label: 'Alunos Ativos' },
-  { icon: Clock, value: '15+', label: 'Anos de Experiência' },
+  { icon: Clock, value: '14+', label: 'Anos de Experiência' },
   { icon: Award, value: '50+', label: 'Prêmios Conquistados' },
   { icon: Target, value: '98%', label: 'Taxa de Satisfação' },
 ]
@@ -27,7 +27,7 @@ export default function About() {
         <SectionHeading
           label="Quem Somos"
           title="Sobre a GF Academia"
-          description="Há mais de 15 anos transformando vidas através do esporte e do bem-estar."
+          description="Há mais de 14 anos transformando vidas através do esporte e do bem-estar."
         />
 
         <div ref={ref} className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center mt-16">
@@ -56,7 +56,7 @@ export default function About() {
               transition={{ delay: 0.5, duration: 0.5 }}
               className="absolute -bottom-6 -right-6 lg:-right-10 glass-card rounded-2xl p-6 max-w-[220px]"
             >
-              <div className="text-4xl font-heading font-black gradient-text mb-1">15+</div>
+              <div className="text-4xl font-heading font-black gradient-text mb-1">14+</div>
               <div className="text-sm text-muted-text">Anos transformando vidas e superando limites</div>
             </motion.div>
           </motion.div>
@@ -82,12 +82,12 @@ export default function About() {
                 Aqui, cada aluno é único. Nossos programas são desenvolvidos
                 individualmente, respeitando seu ritmo e seus objetivos. Seja para
                 emagrecer, ganhar massa muscular, melhorar o condicionamento ou
-                simplesmente viver melhor — a GF tem o plano ideal para você.
+                simplesmente viver melhor. A GF tem o plano ideal para você.
               </p>
               <p>
                 Contamos com uma infraestrutura moderna e acolhedora, com áreas de
-                musculação, funcional, cardio, alongamento e muito mais. Venha
-                conhecer e sentir a diferença.
+                musculação, cardio, alongamento e muito mais. Venha conhecer e
+                sentir a diferença.
               </p>
             </div>
 

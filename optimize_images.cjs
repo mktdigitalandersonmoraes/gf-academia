@@ -22,7 +22,8 @@ async function optimizeFolder(dir) {
         console.log(`Optimizing: ${file} -> ${fileNameNoExt}.webp`);
         
         try {
-          await sharp(fullPath)
+          await sharp(fullPath, { failOnError: false })
+            .rotate()
             .resize({ width: 1600, withoutEnlargement: true })
             .webp({ quality: 80 })
             .toFile(outputPath);

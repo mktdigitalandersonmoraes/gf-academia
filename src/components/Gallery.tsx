@@ -108,7 +108,49 @@ const mockGalleryItems: GalleryItem[] = [
     title: 'Funcional',
     src: '/images/yervant/yervant-6.webp',
   },
-  // Outras unidades foram removidas temporariamente conforme solicitado
+  // Apurá
+  {
+    id: 15,
+    type: 'photo',
+    unit: 'Apurá',
+    title: 'Aulas',
+    src: '/images/apura/Aulas.webp',
+  },
+  {
+    id: 16,
+    type: 'photo',
+    unit: 'Apurá',
+    title: 'Área Cardio',
+    src: '/images/apura/Cardio.webp',
+  },
+  {
+    id: 17,
+    type: 'photo',
+    unit: 'Apurá',
+    title: 'Área Cardio',
+    src: '/images/apura/Cardio 3.webp',
+  },
+  {
+    id: 18,
+    type: 'photo',
+    unit: 'Apurá',
+    title: 'Musculação',
+    src: '/images/apura/Musculação.webp',
+  },
+  {
+    id: 19,
+    type: 'photo',
+    unit: 'Apurá',
+    title: 'Musculação',
+    src: '/images/apura/Musculação 2.webp',
+  },
+  {
+    id: 20,
+    type: 'photo',
+    unit: 'Apurá',
+    title: 'Musculação',
+    src: '/images/apura/Musculação 4.webp',
+  },
 ]
 
 /** Unidades disponíveis para o filtro */
