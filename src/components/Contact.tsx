@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { MapPin, Phone, Mail, Clock, Send, Instagram } from 'lucide-react'
+import { MapPin, Phone, Clock, Send, Instagram } from 'lucide-react'
 import SectionHeading from './SectionHeading'
 import { useSectionInView } from '../hooks/useSectionInView'
 import { fadeInLeft, fadeInRight } from '../lib/animations'

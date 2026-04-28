@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Target, Users, Award, Clock } from 'lucide-react'
+import { Users, Clock } from 'lucide-react'
 import SectionHeading from './SectionHeading'
 import { useSectionInView } from '../hooks/useSectionInView'
 import { fadeInLeft, fadeInRight, staggerContainer, staggerItem } from '../lib/animations'

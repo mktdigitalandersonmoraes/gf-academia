@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Check, Zap, Crown, Flame } from 'lucide-react'
+import { Check, Zap, Crown } from 'lucide-react'
 import SectionHeading from './SectionHeading'
 import { useSectionInView } from '../hooks/useSectionInView'
 import { staggerContainer, staggerItem } from '../lib/animations'
