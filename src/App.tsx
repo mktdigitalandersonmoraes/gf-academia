@@ -4,7 +4,6 @@ import About from './components/About'
 import Services from './components/Services'
 import Locations from './components/Locations'
 import Gallery from './components/Gallery'
-import CallToAction from './components/CallToAction'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 
@@ -21,7 +20,6 @@ function App() {
         <Services />
         <Locations />
         <Gallery />
-        <CallToAction />
         <Contact />
       </main>
       <Footer />

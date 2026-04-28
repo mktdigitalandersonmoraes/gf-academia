@@ -6,10 +6,8 @@ import { fadeInLeft, fadeInRight, staggerContainer, staggerItem } from '../lib/a
 
 /** Números / estatísticas da academia */
 const stats = [
-  { icon: Users, value: '2.500+', label: 'Alunos Ativos' },
+  { icon: Users, value: '2.000+', label: 'Alunos Ativos' },
   { icon: Clock, value: '14+', label: 'Anos de Experiência' },
-  { icon: Award, value: '50+', label: 'Prêmios Conquistados' },
-  { icon: Target, value: '98%', label: 'Taxa de Satisfação' },
 ]
 
 /**
@@ -90,23 +88,14 @@ export default function About() {
                 sentir a diferença.
               </p>
             </div>
-
-            {/* Botão */}
-            <a
-              href="#contato"
-              className="inline-flex items-center mt-8 px-8 py-3 bg-gradient-to-r from-primary to-primary-dark text-white font-semibold rounded-full hover:shadow-lg hover:shadow-primary/25 hover:scale-105 transition-all duration-300"
-            >
-              Agende uma Visita
-            </a>
           </motion.div>
         </div>
 
-        {/* Estatísticas */}
         <motion.div
           variants={staggerContainer}
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-24"
+          className="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-24 max-w-2xl mx-auto"
         >
           {stats.map((stat) => (
             <motion.div

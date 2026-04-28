@@ -66,13 +66,7 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* CTA Desktop */}
-          <a
-            href="#planos"
-            className="hidden md:inline-flex items-center px-6 py-2.5 bg-gradient-to-r from-primary to-primary-dark text-white font-semibold text-sm rounded-full hover:shadow-lg hover:shadow-primary/25 hover:scale-105 transition-all duration-300"
-          >
-            Matricule-se
-          </a>
+
 
           {/* Botão mobile */}
           <button
@@ -110,13 +104,7 @@ export default function Navbar() {
                   {link.label}
                 </motion.a>
               ))}
-              <a
-                href="#planos"
-                onClick={handleLinkClick}
-                className="block mt-4 text-center px-6 py-3 bg-gradient-to-r from-primary to-primary-dark text-white font-semibold rounded-full"
-              >
-                Matricule-se Agora
-              </a>
+
             </div>
           </motion.div>
         )}

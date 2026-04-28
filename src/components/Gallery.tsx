@@ -55,14 +55,14 @@ const mockGalleryItems: GalleryItem[] = [
     id: 7,
     type: 'photo',
     unit: 'Missionária',
-    title: 'Área Funcional',
+    title: 'Aulas',
     src: '/images/missionaria/funcional-1.webp',
   },
   {
     id: 8,
     type: 'photo',
     unit: 'Missionária',
-    title: 'Área Funcional',
+    title: 'Aulas',
     src: '/images/missionaria/funcional-2.webp',
   },
   // Yervant
@@ -91,21 +91,21 @@ const mockGalleryItems: GalleryItem[] = [
     id: 12,
     type: 'photo',
     unit: 'Yervant',
-    title: 'Área Cardio',
+    title: 'Aulas',
     src: '/images/yervant/yervant-4.webp',
   },
   {
     id: 13,
     type: 'photo',
     unit: 'Yervant',
-    title: 'Área Cardio',
+    title: 'Aulas',
     src: '/images/yervant/yervant-5.webp',
   },
   {
     id: 14,
     type: 'photo',
     unit: 'Yervant',
-    title: 'Funcional',
+    title: 'Recepção',
     src: '/images/yervant/yervant-6.webp',
   },
   // Apurá
@@ -151,10 +151,53 @@ const mockGalleryItems: GalleryItem[] = [
     title: 'Musculação',
     src: '/images/apura/Musculação 4.webp',
   },
+  // São Jorge
+  {
+    id: 21,
+    type: 'photo',
+    unit: 'São Jorge',
+    title: 'Musculação',
+    src: '/images/sao-jorge/musculacao-saojorge 1.webp',
+  },
+  {
+    id: 22,
+    type: 'photo',
+    unit: 'São Jorge',
+    title: 'Musculação',
+    src: '/images/sao-jorge/musculacao-saojorge 2.webp',
+  },
+  {
+    id: 23,
+    type: 'photo',
+    unit: 'São Jorge',
+    title: 'Musculação',
+    src: '/images/sao-jorge/musculacao-saojorge 3.webp',
+  },
+  {
+    id: 24,
+    type: 'photo',
+    unit: 'São Jorge',
+    title: 'Musculação',
+    src: '/images/sao-jorge/musculacao-saojorge 4.webp',
+  },
+  {
+    id: 25,
+    type: 'photo',
+    unit: 'São Jorge',
+    title: 'Recepção',
+    src: '/images/sao-jorge/recepcao-saojorge 1.webp',
+  },
+  {
+    id: 26,
+    type: 'photo',
+    unit: 'São Jorge',
+    title: 'Recepção',
+    src: '/images/sao-jorge/recepcao-saojorge 2.webp',
+  },
 ]
 
 /** Unidades disponíveis para o filtro */
-const units = ['Missionária', 'Canhema', 'Apurá', 'São Jorge', 'Yervant']
+const units = ['Missionária', 'Yervant', 'Apurá', 'São Jorge', 'Canhema']
 
 /**
  * Gallery — Nova seção de galeria de fotos e vídeos.

@@ -9,7 +9,8 @@ const locations = [
   { 
     name: 'Missionária', 
     image: '/images/unidade-missionaria.webp',
-    objectPosition: 'center 20%',
+    objectPosition: 'center',
+    objectFit: 'contain',
     whatsapp: 'https://api.whatsapp.com/send/?phone=5511944786613&text&type=phone_number&app_absent=0'
   },
   { 
@@ -18,14 +19,18 @@ const locations = [
     whatsapp: 'https://api.whatsapp.com/send?phone=5511997710042&text=Ol%C3%A1%2C+Gostaria+de+receber+mais+informa%C3%A7%C3%B5es'
   },
   { 
-    name: 'São Jorge',
-    whatsapp: 'https://api.whatsapp.com/send?phone=5511911372695&text=Ol%C3%A1%2C+Gostaria+de+receber+mais+informa%C3%A7%C3%B5es'
-  },
-  { 
     name: 'Apurá', 
     image: '/images/unidade-apura.webp', 
-    objectPosition: '35% center',
+    objectPosition: 'center',
+    objectFit: 'contain',
     whatsapp: 'https://api.whatsapp.com/send?phone=5511998776895&text=Ol%C3%A1%2C+Gostaria+de+receber+mais+informa%C3%A7%C3%B5es.'
+  },
+  { 
+    name: 'São Jorge',
+    image: '/images/unidade-sao-jorge.webp',
+    objectPosition: 'center',
+    objectFit: 'cover',
+    whatsapp: 'https://api.whatsapp.com/send?phone=5511911372695&text=Ol%C3%A1%2C+Gostaria+de+receber+mais+informa%C3%A7%C3%B5es'
   },
   {
     name: 'Canhema',
@@ -68,11 +73,13 @@ export default function Locations() {
             >
               {/* Foto ou Placeholder */}
               {location.image ? (
-                <div className="relative h-64 overflow-hidden border-b border-white/5">
+                <div className="relative h-64 overflow-hidden border-b border-white/5 bg-[#121214]">
                   <img
                     src={location.image}
                     alt={`Unidade ${location.name}`}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    className={`w-full h-full group-hover:scale-110 transition-transform duration-700 ${
+                      (location as any).objectFit === 'contain' ? 'object-contain p-2' : 'object-cover'
+                    }`}
                     style={{ objectPosition: (location as any).objectPosition ?? 'center center' }}
                     loading="lazy"
                     decoding="async"

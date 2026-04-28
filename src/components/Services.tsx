@@ -7,7 +7,7 @@ import { staggerContainer, staggerItem } from '../lib/animations'
 /** Dados dos planos */
 const plans = [
   {
-    name: 'Básico',
+    name: 'Mensal',
     icon: Zap,
     price: '89',
     period: '/mês',
@@ -23,7 +23,7 @@ const plans = [
     cta: 'Começar Agora',
   },
   {
-    name: 'Premium',
+    name: 'Recorrente',
     icon: Crown,
     price: '149',
     period: '/mês',
@@ -38,26 +38,7 @@ const plans = [
       'Estacionamento grátis',
     ],
     popular: true,
-    cta: 'Escolher Premium',
-  },
-  {
-    name: 'Black',
-    icon: Flame,
-    price: '249',
-    period: '/mês',
-    description: 'Experiência exclusiva com atendimento VIP personalizado.',
-    features: [
-      'Tudo do plano Premium',
-      'Personal trainer ilimitado',
-      'Nutricionista dedicado',
-      'Acesso área VIP',
-      'Toalhas e kit fitness',
-      'Prioridade em aulas',
-      'Acompanhamento online 24h',
-      'Treino em outras unidades',
-    ],
-    popular: false,
-    cta: 'Ser Black',
+    cta: 'Escolher Recorrente',
   },
 ]
 
@@ -84,7 +65,7 @@ export default function Services() {
           variants={staggerContainer}
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
-          className="grid md:grid-cols-3 gap-8 mt-12"
+          className="grid md:grid-cols-2 max-w-4xl mx-auto gap-8 mt-12"
         >
           {plans.map((plan) => (
             <motion.div

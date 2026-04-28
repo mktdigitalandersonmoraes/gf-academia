@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Instagram, Facebook, Youtube, MapPin, Phone, Mail, ArrowUp } from 'lucide-react'
+import { Instagram, Youtube, MapPin, Phone, Mail, ArrowUp } from 'lucide-react'
 import { fadeInUp } from '../lib/animations'
 import { useSectionInView } from '../hooks/useSectionInView'
 
@@ -12,20 +12,13 @@ const footerLinks = {
     { label: 'Galeria', href: '#galeria' },
     { label: 'Contato', href: '#contato' },
   ],
-  servicos: [
-    { label: 'Musculação', href: '#planos' },
-    { label: 'Funcional', href: '#planos' },
-    { label: 'Unidades', href: '#unidades' },
-    { label: 'Aulas em Grupo', href: '#planos' },
-    { label: 'Nutrição', href: '#planos' },
-  ],
+
 }
 
 /** Links de redes sociais */
 const socialLinks = [
-  { icon: Instagram, href: '#', label: 'Instagram' },
-  { icon: Facebook, href: '#', label: 'Facebook' },
-  { icon: Youtube, href: '#', label: 'YouTube' },
+  { icon: Instagram, href: 'https://www.instagram.com/gf.academia.oficial/', label: 'Instagram', target: '_blank' },
+  { icon: Youtube, href: '#', label: 'YouTube', target: '_blank' },
 ]
 
 /**
@@ -50,7 +43,7 @@ export default function Footer() {
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16"
       >
         {/* Grid principal */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <div className="grid md:grid-cols-3 gap-12 mb-16">
           {/* Logo e descrição */}
           <div className="lg:col-span-1 flex flex-col items-center text-center mt-2">
             <a href="#inicio" className="inline-block mb-3 group">
@@ -71,6 +64,8 @@ export default function Footer() {
                 <a
                   key={social.label}
                   href={social.href}
+                  target={social.target || '_self'}
+                  rel={social.target === '_blank' ? 'noopener noreferrer' : undefined}
                   aria-label={social.label}
                   className="w-10 h-10 rounded-xl bg-dark-card border border-dark-border flex items-center justify-center text-muted-text hover:text-white hover:bg-primary hover:border-primary transition-all duration-300"
                 >
@@ -97,22 +92,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Links - Serviços */}
-          <div>
-            <h4 className="font-heading font-bold text-white mb-6">Serviços</h4>
-            <ul className="space-y-3">
-              {footerLinks.servicos.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-muted-text text-sm hover:text-primary transition-colors duration-200"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+
 
           {/* Contato rápido */}
           <div>
@@ -120,15 +100,15 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-sm text-muted-text">
                 <MapPin size={16} className="text-primary mt-0.5 flex-shrink-0" />
-                <span>Rua das Palmeiras, 1234 — Centro, São Paulo/SP</span>
+                <span>Av. Yervant Kissajikian, 3636 - Americanópolis, São Paulo/SP</span>
               </li>
               <li className="flex items-center gap-3 text-sm text-muted-text">
                 <Phone size={16} className="text-primary flex-shrink-0" />
-                <span>(11) 99999-9999</span>
+                <span>(11) 99771-0042</span>
               </li>
               <li className="flex items-center gap-3 text-sm text-muted-text">
                 <Mail size={16} className="text-primary flex-shrink-0" />
-                <span>contato@gfacademia.com.br</span>
+                <span>yervant@gfacademia.com.br</span>
               </li>
             </ul>
           </div>

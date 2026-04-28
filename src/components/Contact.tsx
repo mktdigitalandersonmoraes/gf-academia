@@ -1,32 +1,52 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react'
+import { MapPin, Phone, Mail, Clock, Send, Instagram } from 'lucide-react'
 import SectionHeading from './SectionHeading'
 import { useSectionInView } from '../hooks/useSectionInView'
 import { fadeInLeft, fadeInRight } from '../lib/animations'
 
-/** Informações de contato */
-const contactInfo = [
+/** Dados das unidades para contato */
+const unitsData = [
   {
-    icon: MapPin,
-    label: 'Endereço',
-    value: 'Rua das Palmeiras, 1234 — Centro, São Paulo/SP',
+    name: 'Missionária',
+    address: 'Rua Frei Lourenço de Alcântara, 75 - Vila Missionaria, São Paulo/SP',
+    phone: '(11) 94478-6613',
+    hours: 'Seg-Sex: 6h-22h | Sáb: 9h-14h',
+    mapUrl: 'https://maps.google.com/maps?q=Rua%20Frei%20Louren%C3%A7o%20de%20Alc%C3%A2ntara,%2075%20-%20Vila%20Missionaria,%20S%C3%A3o%20Paulo/SP&t=&z=15&ie=UTF8&iwloc=&output=embed',
+    instagram: 'https://www.instagram.com/gf.missionaria.oficial/'
   },
   {
-    icon: Phone,
-    label: 'Telefone',
-    value: '(11) 99999-9999',
+    name: 'Yervant',
+    address: 'Av. Yervant Kissajikian, 3636 - Americanópolis, São Paulo/SP',
+    phone: '(11) 99771-0042',
+    hours: 'Seg-Sex: 6h-23h | Sáb: 9h-14h',
+    mapUrl: 'https://maps.google.com/maps?q=Av.%20Yervant%20Kissajikian,%203636%20-%20American%C3%B3polis,%20S%C3%A3o%20Paulo/SP&t=&z=15&ie=UTF8&iwloc=&output=embed',
+    instagram: 'https://www.instagram.com/gf.yervant.oficial/'
   },
   {
-    icon: Mail,
-    label: 'E-mail',
-    value: 'contato@gfacademia.com.br',
+    name: 'Apurá',
+    address: 'R. Salvador Dali, 3 - Jardim Apura, São Paulo/SP',
+    phone: '(11) 99877-6895',
+    hours: 'Seg-Sex: 6h-22h | Sáb: 9h-14h',
+    mapUrl: 'https://maps.google.com/maps?q=R.%20Salvador%20Dali,%203%20-%20Jardim%20Apura,%20S%C3%A3o%20Paulo/SP&t=&z=15&ie=UTF8&iwloc=&output=embed',
+    instagram: 'https://www.instagram.com/gf.apura.oficial/'
   },
   {
-    icon: Clock,
-    label: 'Horário',
-    value: 'Seg-Sex: 5h-23h | Sáb: 7h-18h | Dom: 8h-14h',
+    name: 'São Jorge',
+    address: 'Rua Dina de Azevedo Alvim, 181 - Jardim São Jorge, São Paulo/SP',
+    phone: '(11) 91137-2695',
+    hours: 'Seg-Sex: 6h-23h | Sáb: 9h-14h',
+    mapUrl: 'https://maps.google.com/maps?q=Rua%20Dina%20de%20Azevedo%20Alvim,%20181%20-%20Jardim%20S%C3%A3o%20Jorge,%20S%C3%A3o%20Paulo/SP&t=&z=15&ie=UTF8&iwloc=&output=embed',
+    instagram: 'https://www.instagram.com/gf.saojorge.oficial/'
   },
+  {
+    name: 'Canhema',
+    address: 'Rua Vinte e Seis de Abril, 20 - Canhema, Diadema/SP',
+    phone: '(11) 95630-8853',
+    hours: 'Seg-Sex: 6h-23h | Sáb: 9h-14h',
+    mapUrl: 'https://maps.google.com/maps?q=Rua%20Vinte%20e%20Seis%20de%20Abril,%2020%20-%20Canhema,%20Diadema/SP&t=&z=15&ie=UTF8&iwloc=&output=embed',
+    instagram: 'https://www.instagram.com/gf.canhema.oficial/'
+  }
 ]
 
 /**
@@ -34,6 +54,7 @@ const contactInfo = [
  */
 export default function Contact() {
   const { ref, isInView } = useSectionInView(0.1)
+  const [activeUnit, setActiveUnit] = useState('Missionária')
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -41,6 +62,20 @@ export default function Contact() {
     message: '',
   })
   const [isSubmitted, setIsSubmitted] = useState(false)
+
+  const currentUnit = unitsData.find(u => u.name === activeUnit) || unitsData[0]
+
+  const contactInfo = [
+    { icon: MapPin, label: 'Endereço', value: currentUnit.address },
+    { icon: Phone, label: 'Telefone', value: currentUnit.phone },
+    { icon: Clock, label: 'Horário', value: currentUnit.hours },
+    { 
+      icon: Instagram, 
+      label: 'Instagram', 
+      value: '@' + currentUnit.instagram.split('instagram.com/')[1].replace(/\//g, ''), 
+      link: currentUnit.instagram 
+    },
+  ]
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -66,7 +101,7 @@ export default function Contact() {
         <SectionHeading
           label="Contato"
           title="Fale Conosco"
-          description="Tem alguma dúvida? Entre em contato e nossa equipe responderá o mais rápido possível."
+          description="Tem alguma dúvida? Selecione a unidade e entre em contato conosco."
         />
 
         <div ref={ref} className="grid lg:grid-cols-2 gap-12 lg:gap-20 mt-12">
@@ -75,13 +110,26 @@ export default function Contact() {
             variants={fadeInLeft}
             initial="hidden"
             animate={isInView ? 'visible' : 'hidden'}
+            className="flex flex-col h-full"
           >
-            <h3 className="font-heading font-bold text-2xl text-white mb-8">
-              Informações de{' '}
-              <span className="gradient-text">Contato</span>
-            </h3>
+            {/* Seletor de Unidades */}
+            <div className="flex flex-wrap gap-2 mb-8">
+              {unitsData.map((unit) => (
+                <button
+                  key={unit.name}
+                  onClick={() => setActiveUnit(unit.name)}
+                  className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${
+                    activeUnit === unit.name
+                      ? 'bg-primary text-dark shadow-lg shadow-primary/20 scale-105'
+                      : 'bg-dark-card border border-dark-border text-muted-text hover:border-primary/50 hover:text-white'
+                  }`}
+                >
+                  {unit.name}
+                </button>
+              ))}
+            </div>
 
-            <div className="space-y-6">
+            <div className="space-y-6 flex-grow">
               {contactInfo.map((info) => (
                 <div
                   key={info.label}
@@ -94,18 +142,29 @@ export default function Contact() {
                     <h4 className="font-semibold text-white text-sm mb-1">
                       {info.label}
                     </h4>
-                    <p className="text-muted-text text-sm">{info.value}</p>
+                    {(info as any).link ? (
+                      <a 
+                        href={(info as any).link} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="text-primary hover:underline hover:text-primary-dark transition-colors text-sm"
+                      >
+                        {info.value}
+                      </a>
+                    ) : (
+                      <p className="text-muted-text text-sm">{info.value}</p>
+                    )}
                   </div>
                 </div>
               ))}
             </div>
 
-            {/* Mapa placeholder */}
-            <div className="mt-10 rounded-2xl overflow-hidden border border-dark-border h-48 bg-dark-card flex items-center justify-center">
+            {/* Mapa dinâmico */}
+            <div className="mt-8 rounded-2xl overflow-hidden border border-dark-border h-56 bg-dark-card flex items-center justify-center relative">
               <iframe
-                title="Localização GF Academia"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.1975635942914!2d-46.65442708502212!3d-23.56115668468092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1640000000000!5m2!1spt-BR!2sbr"
-                className="w-full h-full border-0 opacity-70 hover:opacity-100 transition-opacity duration-300"
+                title={`Localização ${currentUnit.name}`}
+                src={currentUnit.mapUrl}
+                className="absolute inset-0 w-full h-full border-0 opacity-80 hover:opacity-100 transition-opacity duration-300"
                 allowFullScreen
                 loading="lazy"
               />
