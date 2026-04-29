@@ -8,6 +8,7 @@ import { staggerContainer, staggerItem } from '../lib/animations'
 const locations = [
   { 
     name: 'Missionária', 
+    address: 'Rua Frei Lourenço de Alcântara, 75 - Vila Missionaria, São Paulo/SP',
     image: '/images/unidade-missionaria.webp',
     objectPosition: 'center',
     objectFit: 'contain',
@@ -15,11 +16,13 @@ const locations = [
   },
   { 
     name: 'Yervant',
+    address: 'Av. Yervant Kissajikian, 3636 - Americanópolis, São Paulo/SP',
     image: '/images/unidade-yervant.webp',
     whatsapp: 'https://api.whatsapp.com/send?phone=5511997710042&text=Ol%C3%A1%2C+Gostaria+de+receber+mais+informa%C3%A7%C3%B5es'
   },
   { 
     name: 'Apurá', 
+    address: 'R. Salvador Dali, 3 - Jardim Apura, São Paulo/SP',
     image: '/images/unidade-apura.webp', 
     objectPosition: 'center',
     objectFit: 'contain',
@@ -27,13 +30,15 @@ const locations = [
   },
   { 
     name: 'São Jorge',
+    address: 'Rua Dina de Azevedo Alvim, 181 - Jardim São Jorge, São Paulo/SP',
     image: '/images/unidade-sao-jorge.webp',
-    objectPosition: 'center',
+    objectPosition: 'center bottom',
     objectFit: 'cover',
     whatsapp: 'https://api.whatsapp.com/send?phone=5511911372695&text=Ol%C3%A1%2C+Gostaria+de+receber+mais+informa%C3%A7%C3%B5es'
   },
   {
     name: 'Canhema',
+    address: 'Rua Vinte e Seis de Abril, 20 - Canhema, Diadema/SP',
     image: '/images/unidade-canhema.webp',
     preVenda: true,
     preVendaPrice: 'R$ 49,99',
@@ -103,9 +108,13 @@ export default function Locations() {
 
               {/* Info da Unidade */}
               <div className="p-6 text-center flex flex-col flex-grow items-center">
-                <h3 className="font-heading font-bold text-xl text-white mb-4">
+                <h3 className="font-heading font-bold text-xl text-white mb-2">
                   {location.name}
                 </h3>
+                <p className="text-muted-text text-sm mb-6 max-w-[250px]">
+                  {location.address}
+                </p>
+
                 {(location as any).preVenda ? (
                   <div className="mt-auto w-full">
                     <p className="text-muted-text text-sm mb-1">Pré-Venda por apenas</p>

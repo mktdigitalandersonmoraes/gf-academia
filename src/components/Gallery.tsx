@@ -191,8 +191,8 @@ const mockGalleryItems: GalleryItem[] = [
     id: 26,
     type: 'photo',
     unit: 'São Jorge',
-    title: 'Recepção',
-    src: '/images/sao-jorge/recepcao-saojorge 2.webp',
+    title: 'Cardio',
+    src: '/images/sao-jorge/cardio-saojorge 1.webp',
   },
 ]
 
