@@ -47,7 +47,7 @@ export default function Navbar() {
             <img 
               src="/images/logo-novo.webp" 
               alt="GF Academia" 
-              className="w-[120px] h-auto group-hover:scale-105 transition-transform duration-300"
+              className="w-[100px] sm:w-[120px] h-auto group-hover:scale-105 transition-transform duration-300"
               loading="lazy"
               decoding="async"
             />

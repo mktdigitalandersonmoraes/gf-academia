@@ -113,7 +113,7 @@ export default function Contact() {
             className="flex flex-col h-full"
           >
             {/* Seletor de Unidades */}
-            <div className="flex flex-wrap gap-2 mb-8">
+            <div className="flex flex-nowrap sm:flex-wrap gap-2 mb-8 overflow-x-auto pb-4 sm:pb-0 scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0">
               {unitsData.map((unit) => (
                 <button
                   key={unit.name}

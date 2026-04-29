@@ -229,7 +229,7 @@ export default function Gallery() {
           variants={fadeInUp}
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
-          className="flex flex-wrap justify-center gap-3 mt-12 mb-8"
+          className="flex flex-nowrap sm:flex-wrap justify-start sm:justify-center gap-3 mt-12 mb-8 overflow-x-auto pb-4 sm:pb-0 scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0"
         >
           {units.map((unit) => (
             <button

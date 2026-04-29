@@ -100,7 +100,7 @@ export default function Hero() {
               className="max-w-3xl"
             >
               {/* Headline */}
-              <h1 className="font-heading font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight mb-6 whitespace-pre-line">
+              <h1 className="font-heading font-black text-3xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight mb-6 whitespace-pre-line">
                 <span className="gradient-text">
                   {slides[current].headline}
                 </span>
@@ -134,14 +134,14 @@ export default function Hero() {
       {/* Setas de navegação */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 backdrop-blur-sm border border-white/10 text-white hover:bg-primary/30 hover:border-primary/40 transition-all duration-300"
+        className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm border border-white/10 text-white hover:bg-primary/30 hover:border-primary/40 transition-all duration-300"
         aria-label="Slide anterior"
       >
         <ChevronLeft size={24} />
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 backdrop-blur-sm border border-white/10 text-white hover:bg-primary/30 hover:border-primary/40 transition-all duration-300"
+        className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm border border-white/10 text-white hover:bg-primary/30 hover:border-primary/40 transition-all duration-300"
         aria-label="Próximo slide"
       >
         <ChevronRight size={24} />
