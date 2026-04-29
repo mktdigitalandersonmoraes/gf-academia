@@ -52,7 +52,7 @@ export default function About() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ delay: 0.5, duration: 0.5 }}
-              className="absolute -bottom-6 -right-6 lg:-right-10 glass-card rounded-2xl p-6 max-w-[220px]"
+              className="absolute -bottom-6 right-2 sm:-right-6 lg:-right-10 glass-card rounded-2xl p-6 max-w-[220px]"
             >
               <div className="text-4xl font-heading font-black gradient-text mb-1">14+</div>
               <div className="text-sm text-muted-text">Anos transformando vidas e superando limites</div>

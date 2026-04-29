@@ -68,7 +68,7 @@ export default function Hero() {
   return (
     <section id="inicio" className="relative h-screen overflow-hidden">
       {/* Slides de imagem de fundo */}
-      <AnimatePresence custom={direction} mode="popLayout">
+      <AnimatePresence custom={direction} mode="wait">
         <motion.div
           key={current}
           custom={direction}
