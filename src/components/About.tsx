@@ -40,7 +40,7 @@ export default function About() {
               <img
                 src="/images/quem-somos.webp"
                 alt="Interior da GF Academia"
-                className="w-full h-[400px] lg:h-[500px] object-cover object-left group-hover:scale-105 transition-transform duration-700"
+                className="w-full h-[400px] lg:h-[500px] object-cover object-right group-hover:scale-105 transition-transform duration-700"
                 loading="lazy"
                 decoding="async"
               />
