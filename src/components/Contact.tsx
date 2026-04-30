@@ -57,10 +57,10 @@ export default function Contact() {
   const [activeUnit, setActiveUnit] = useState('Missionária')
   const [formType, setFormType] = useState<'mensagem' | 'trabalhe'>('mensagem')
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: '',
+    Nome: '',
+    Email: '',
+    Telefone: '',
+    Mensagem: '',
   })
   const [isSubmitted, setIsSubmitted] = useState(false)
 
@@ -91,7 +91,7 @@ export default function Contact() {
         body: submitData,
       })
       
-      setFormData({ name: '', email: '', phone: '', message: '' })
+      setFormData({ Nome: '', Email: '', Telefone: '', Mensagem: '' })
       if (formType === 'trabalhe') {
          form.reset()
       }
@@ -235,7 +235,7 @@ export default function Contact() {
                     name="Nome"
                     type="text"
                     required
-                    value={formData.name}
+                    value={formData.Nome}
                     onChange={handleChange}
                     placeholder="Digite seu nome completo"
                     className="w-full px-4 py-3 rounded-xl bg-dark border border-dark-border text-white placeholder-muted-text/50 focus:border-primary focus:ring-1 focus:ring-primary/30 transition-all duration-300 outline-none"
@@ -253,7 +253,7 @@ export default function Contact() {
                       name="Email"
                       type="email"
                       required
-                      value={formData.email}
+                      value={formData.Email}
                       onChange={handleChange}
                       placeholder="seu@email.com"
                       className="w-full px-4 py-3 rounded-xl bg-dark border border-dark-border text-white placeholder-muted-text/50 focus:border-primary focus:ring-1 focus:ring-primary/30 transition-all duration-300 outline-none"
@@ -271,7 +271,7 @@ export default function Contact() {
                     name="Telefone"
                     type="tel"
                     required
-                    value={formData.phone}
+                    value={formData.Telefone}
                     onChange={handleChange}
                     placeholder="(11) 99999-9999"
                     className="w-full px-4 py-3 rounded-xl bg-dark border border-dark-border text-white placeholder-muted-text/50 focus:border-primary focus:ring-1 focus:ring-primary/30 transition-all duration-300 outline-none"
@@ -289,7 +289,7 @@ export default function Contact() {
                       name="Mensagem"
                       required
                       rows={4}
-                      value={formData.message}
+                      value={formData.Mensagem}
                       onChange={handleChange}
                       placeholder="Conte-nos como podemos ajudar..."
                       className="w-full px-4 py-3 rounded-xl bg-dark border border-dark-border text-white placeholder-muted-text/50 focus:border-primary focus:ring-1 focus:ring-primary/30 transition-all duration-300 outline-none resize-none"
