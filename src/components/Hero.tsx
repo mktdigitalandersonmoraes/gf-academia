@@ -17,7 +17,7 @@ const slides = [
       'Treinos personalizados, acompanhamento profissional e uma comunidade que te motiva a ir além. Comece sua jornada agora.',
   },
   {
-    image: '/images/banner-3.webp',
+    image: '/images/banner-4.webp',
     headline: 'Sua Melhor Versão\nComeça Aqui',
     subheadline:
       'Aulas em grupo, musculação, funcional e muito mais. Encontre o treino perfeito para o seu estilo de vida.',
@@ -112,16 +112,16 @@ export default function Hero() {
               </p>
 
               {/* Botões CTA */}
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-2 sm:mt-0">
                 <a
                   href="#planos"
-                  className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-primary to-primary-dark text-white font-bold text-lg rounded-full hover:shadow-xl hover:shadow-primary/30 hover:scale-105 transition-all duration-300 animate-pulse-glow"
+                  className="inline-flex items-center justify-center px-6 py-3 sm:px-8 sm:py-4 bg-gradient-to-r from-primary to-primary-dark text-white font-bold text-base sm:text-lg rounded-full hover:shadow-xl hover:shadow-primary/30 hover:scale-105 transition-all duration-300 animate-pulse-glow"
                 >
                   Comece Agora
                 </a>
                 <a
                   href="#sobre"
-                  className="inline-flex items-center justify-center px-8 py-4 border-2 border-white/20 text-white font-semibold text-lg rounded-full hover:bg-white/10 hover:border-white/40 transition-all duration-300"
+                  className="inline-flex items-center justify-center px-6 py-3 sm:px-8 sm:py-4 border-2 border-white/20 text-white font-semibold text-base sm:text-lg rounded-full hover:bg-white/10 hover:border-white/40 transition-all duration-300"
                 >
                   Saiba Mais
                 </a>
