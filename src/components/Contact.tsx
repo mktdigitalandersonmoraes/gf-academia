@@ -86,7 +86,7 @@ export default function Contact() {
 
     setIsSubmitted(true)
     try {
-      await fetch('https://formsubmit.co/ajax/mktdigitalandersonmoraes@gmail.com', {
+      await fetch('https://formsubmit.co/ajax/mavifa77@gmail.com', {
         method: 'POST',
         body: submitData,
       })
