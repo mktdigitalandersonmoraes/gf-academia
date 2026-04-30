@@ -25,9 +25,10 @@ const plans = [
   {
     name: 'Recorrente',
     icon: Crown,
-    price: '149', // Placeholder, user didn't specify price for Recorrente but it must exist
+    price: '79,99', // Placeholder, user didn't specify price for Recorrente but it must exist
     period: '/mês',
     description: 'Esse plano é para pagamento via cartão de crédito. Cobrança automática sem comprometer o limite. Sem anuidade. Sem multa.',
+    adesao: 'Adesão: R$ 20,00',
     features: [
       'Acesso a todas as unidades',
       'Musculação',
