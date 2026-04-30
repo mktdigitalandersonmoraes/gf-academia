@@ -278,24 +278,22 @@ export default function Contact() {
                   />
                 </div>
 
-                {/* Mensagem - apenas para envie uma mensagem */}
-                {formType === 'mensagem' && (
-                  <div>
-                    <label htmlFor="contact-message" className="block text-sm font-medium text-muted-text mb-2">
-                      Mensagem
-                    </label>
-                    <textarea
-                      id="contact-message"
-                      name="Mensagem"
-                      required
-                      rows={4}
-                      value={formData.Mensagem}
-                      onChange={handleChange}
-                      placeholder="Conte-nos como podemos ajudar..."
-                      className="w-full px-4 py-3 rounded-xl bg-dark border border-dark-border text-white placeholder-muted-text/50 focus:border-primary focus:ring-1 focus:ring-primary/30 transition-all duration-300 outline-none resize-none"
-                    />
-                  </div>
-                )}
+                {/* Mensagem */}
+                <div>
+                  <label htmlFor="contact-message" className="block text-sm font-medium text-muted-text mb-2">
+                    Mensagem
+                  </label>
+                  <textarea
+                    id="contact-message"
+                    name="Mensagem"
+                    required
+                    rows={4}
+                    value={formData.Mensagem}
+                    onChange={handleChange}
+                    placeholder="Conte-nos como podemos ajudar..."
+                    className="w-full px-4 py-3 rounded-xl bg-dark border border-dark-border text-white placeholder-muted-text/50 focus:border-primary focus:ring-1 focus:ring-primary/30 transition-all duration-300 outline-none resize-none"
+                  />
+                </div>
 
                 {/* Currículo - apenas para trabalhe conosco */}
                 {formType === 'trabalhe' && (
