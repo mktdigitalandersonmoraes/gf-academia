@@ -42,9 +42,9 @@ export default function Hero() {
     setCurrent((prev) => (prev - 1 + slides.length) % slides.length)
   }, [])
 
-  // Auto-play a cada 6 segundos
+  // Auto-play a cada 5 segundos
   useEffect(() => {
-    const timer = setInterval(nextSlide, 6000)
+    const timer = setInterval(nextSlide, 5000)
     return () => clearInterval(timer)
   }, [nextSlide])
 
@@ -83,12 +83,12 @@ export default function Hero() {
             style={{ backgroundImage: `url(${slides[current].image})` }}
           />
           {/* Overlay escuro para legibilidade */}
-          <div className="absolute inset-0 bg-gradient-to-b from-dark/70 via-dark/50 to-dark" />
+          <div className="absolute inset-0 bg-gradient-to-b from-dark/50 via-dark/30 to-dark/80" />
         </motion.div>
       </AnimatePresence>
 
       {/* Conteúdo do hero */}
-      <div className="relative z-10 h-full flex items-center">
+      <div className="relative z-10 h-full flex items-center pt-[25vh] md:pt-[20vh]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <AnimatePresence mode="wait">
             <motion.div
@@ -112,16 +112,16 @@ export default function Hero() {
               </p>
 
               {/* Botões CTA */}
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-2 sm:mt-0">
+              <div className="flex flex-row flex-wrap gap-3 sm:gap-4 mt-4 sm:mt-0">
                 <a
                   href="#planos"
-                  className="inline-flex items-center justify-center px-6 py-3 sm:px-8 sm:py-4 bg-gradient-to-r from-primary to-primary-dark text-white font-bold text-base sm:text-lg rounded-full hover:shadow-xl hover:shadow-primary/30 hover:scale-105 transition-all duration-300 animate-pulse-glow"
+                  className="inline-flex w-fit items-center justify-center px-4 py-2 sm:px-8 sm:py-4 bg-gradient-to-r from-primary to-primary-dark text-white font-bold text-sm sm:text-lg rounded-full hover:shadow-xl hover:shadow-primary/30 hover:scale-105 transition-all duration-300 animate-pulse-glow"
                 >
                   Comece Agora
                 </a>
                 <a
                   href="#sobre"
-                  className="inline-flex items-center justify-center px-6 py-3 sm:px-8 sm:py-4 border-2 border-white/20 text-white font-semibold text-base sm:text-lg rounded-full hover:bg-white/10 hover:border-white/40 transition-all duration-300"
+                  className="inline-flex w-fit items-center justify-center px-4 py-2 sm:px-8 sm:py-4 border-2 border-white/20 text-white font-semibold text-sm sm:text-lg rounded-full hover:bg-white/10 hover:border-white/40 transition-all duration-300"
                 >
                   Saiba Mais
                 </a>
