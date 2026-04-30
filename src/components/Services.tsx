@@ -9,36 +9,33 @@ const plans = [
   {
     name: 'Mensal',
     icon: Zap,
-    price: '89',
+    price: '89,99',
     period: '/mês',
-    description: 'Ideal para quem está começando sua jornada fitness.',
+    description: 'Pode ser pago diretamente na recepção.',
+    adesao: 'Adesão: R$ 20,00',
     features: [
-      'Acesso à musculação',
-      'Horário comercial (6h-22h)',
-      'Avaliação física mensal',
-      'Acesso ao app de treinos',
-      'Armário incluso',
+      'Acesso a todas as unidades',
+      'Musculação',
+      'Aulas Coletivas',
+      'Aulas Especiais',
     ],
     popular: false,
-    cta: 'Começar Agora',
+    cta: 'Escolha a unidade mais próxima de você',
   },
   {
     name: 'Recorrente',
     icon: Crown,
-    price: '149',
+    price: '149', // Placeholder, user didn't specify price for Recorrente but it must exist
     period: '/mês',
-    description: 'O mais escolhido! Acesso completo com acompanhamento.',
+    description: 'Esse plano é para pagamento via cartão de crédito. Cobrança automática sem comprometer o limite. Sem anuidade. Sem multa.',
     features: [
-      'Acesso ilimitado 24h',
-      'Todas as aulas em grupo',
-      'Personal trainer 2x/semana',
-      'Avaliação física semanal',
-      'Área de alongamento e spa',
-      'Suplementação com desconto',
-      'Estacionamento grátis',
+      'Acesso a todas as unidades',
+      'Musculação',
+      'Aulas Coletivas',
+      'Aulas Especiais',
     ],
     popular: true,
-    cta: 'Escolher Recorrente',
+    cta: 'Escolha a unidade mais próxima de você',
   },
 ]
 
@@ -102,14 +99,21 @@ export default function Services() {
               <p className="text-muted-text text-sm mb-6">{plan.description}</p>
 
               {/* Preço */}
-              <div className="flex items-end gap-1 mb-8">
-                <span className="text-muted-text text-lg">R$</span>
-                <span className="font-heading font-black text-5xl gradient-text">
-                  {plan.price}
-                </span>
-                <span className="text-muted-text text-sm mb-2">
-                  {plan.period}
-                </span>
+              <div className="flex flex-col items-start gap-1 mb-8">
+                <div className="flex items-end gap-1">
+                  <span className="text-muted-text text-lg">R$</span>
+                  <span className="font-heading font-black text-5xl gradient-text">
+                    {plan.price}
+                  </span>
+                  <span className="text-muted-text text-sm mb-2">
+                    {plan.period}
+                  </span>
+                </div>
+                {(plan as any).adesao && (
+                  <span className="text-primary text-sm font-semibold mt-1">
+                    {(plan as any).adesao}
+                  </span>
+                )}
               </div>
 
               {/* Features */}
@@ -126,8 +130,8 @@ export default function Services() {
 
               {/* Botão CTA */}
               <a
-                href="#contato"
-                className={`block text-center py-4 rounded-full font-semibold transition-all duration-300 ${
+                href="#unidades"
+                className={`block text-center py-4 px-2 rounded-full font-semibold transition-all duration-300 ${
                   plan.popular
                     ? 'bg-gradient-to-r from-primary to-primary-dark text-white hover:shadow-lg hover:shadow-primary/30 hover:scale-105'
                     : 'border-2 border-dark-border text-white hover:border-primary hover:bg-primary/5'

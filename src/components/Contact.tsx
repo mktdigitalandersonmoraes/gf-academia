@@ -110,10 +110,10 @@ export default function Contact() {
             variants={fadeInLeft}
             initial="hidden"
             animate={isInView ? 'visible' : 'hidden'}
-            className="flex flex-col h-full"
+            className="flex flex-col h-full w-full max-w-full overflow-hidden"
           >
             {/* Seletor de Unidades */}
-            <div className="flex flex-nowrap sm:flex-wrap gap-2 mb-8 overflow-x-auto pb-4 sm:pb-0 scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0">
+            <div className="flex flex-nowrap sm:flex-wrap gap-2 mb-8 overflow-x-auto pb-4 sm:pb-0 scrollbar-hide w-full">
               {unitsData.map((unit) => (
                 <button
                   key={unit.name}
@@ -160,7 +160,7 @@ export default function Contact() {
             </div>
 
             {/* Mapa dinâmico */}
-            <div className="mt-8 rounded-2xl overflow-hidden border border-dark-border h-56 bg-dark-card flex items-center justify-center relative">
+            <div className="mt-8 rounded-2xl overflow-hidden border border-dark-border h-56 w-full bg-dark-card flex items-center justify-center relative">
               <iframe
                 title={`Localização ${currentUnit.name}`}
                 src={currentUnit.mapUrl}
@@ -176,8 +176,9 @@ export default function Contact() {
             variants={fadeInRight}
             initial="hidden"
             animate={isInView ? 'visible' : 'hidden'}
+            className="w-full max-w-full"
           >
-            <form onSubmit={handleSubmit} className="glass-card rounded-3xl p-8 md:p-10">
+            <form onSubmit={handleSubmit} className="glass-card rounded-3xl p-6 md:p-10 w-full">
               <h3 className="font-heading font-bold text-2xl text-white mb-8">
                 Envie uma{' '}
                 <span className="gradient-text">Mensagem</span>
