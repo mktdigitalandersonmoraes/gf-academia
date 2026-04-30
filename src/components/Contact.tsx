@@ -55,6 +55,7 @@ const unitsData = [
 export default function Contact() {
   const { ref, isInView } = useSectionInView(0.1)
   const [activeUnit, setActiveUnit] = useState('Missionária')
+  const [formType, setFormType] = useState<'mensagem' | 'trabalhe'>('mensagem')
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -77,14 +78,29 @@ export default function Contact() {
     },
   ]
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    // Simula envio do formulário
+    
+    const form = e.currentTarget
+    const submitData = new FormData(form)
+
     setIsSubmitted(true)
-    setTimeout(() => {
-      setIsSubmitted(false)
+    try {
+      await fetch('https://formsubmit.co/ajax/mktdigitalandersonmoraes@gmail.com', {
+        method: 'POST',
+        body: submitData,
+      })
+      
       setFormData({ name: '', email: '', phone: '', message: '' })
-    }, 3000)
+      if (formType === 'trabalhe') {
+         form.reset()
+      }
+      setTimeout(() => setIsSubmitted(false), 3000)
+    } catch (error) {
+      console.error(error)
+      setIsSubmitted(false)
+      alert("Houve um erro ao enviar. Tente novamente.")
+    }
   }
 
   const handleChange = (
@@ -178,24 +194,45 @@ export default function Contact() {
             animate={isInView ? 'visible' : 'hidden'}
             className="w-full max-w-full"
           >
-            <form onSubmit={handleSubmit} className="glass-card rounded-3xl p-6 md:p-10 w-full">
-              <h3 className="font-heading font-bold text-2xl text-white mb-8">
-                Envie uma{' '}
-                <span className="gradient-text">Mensagem</span>
-              </h3>
+            <form onSubmit={handleSubmit} className="glass-card rounded-3xl p-6 md:p-10 w-full" encType="multipart/form-data">
+              <input type="hidden" name="_subject" value={formType === 'mensagem' ? 'Nova Mensagem do Site' : 'Novo Currículo - Trabalhe Conosco'} />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_template" value="table" />
+
+              <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                <button
+                  type="button"
+                  onClick={() => setFormType('mensagem')}
+                  className={`flex-1 py-3 px-4 rounded-xl font-semibold transition-all duration-300 text-sm sm:text-base ${
+                    formType === 'mensagem'
+                      ? 'bg-primary text-dark shadow-lg shadow-primary/20'
+                      : 'bg-dark border border-dark-border text-muted-text hover:border-primary/50 hover:text-white'
+                  }`}
+                >
+                  Envie uma Mensagem
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setFormType('trabalhe')}
+                  className={`flex-1 py-3 px-4 rounded-xl font-semibold transition-all duration-300 text-sm sm:text-base ${
+                    formType === 'trabalhe'
+                      ? 'bg-primary text-dark shadow-lg shadow-primary/20'
+                      : 'bg-dark border border-dark-border text-muted-text hover:border-primary/50 hover:text-white'
+                  }`}
+                >
+                  Trabalhe Conosco
+                </button>
+              </div>
 
               <div className="space-y-5">
                 {/* Nome */}
                 <div>
-                  <label
-                    htmlFor="contact-name"
-                    className="block text-sm font-medium text-muted-text mb-2"
-                  >
+                  <label htmlFor="contact-name" className="block text-sm font-medium text-muted-text mb-2">
                     Seu Nome
                   </label>
                   <input
                     id="contact-name"
-                    name="name"
+                    name="Nome"
                     type="text"
                     required
                     value={formData.name}
@@ -205,38 +242,35 @@ export default function Contact() {
                   />
                 </div>
 
-                {/* E-mail */}
-                <div>
-                  <label
-                    htmlFor="contact-email"
-                    className="block text-sm font-medium text-muted-text mb-2"
-                  >
-                    E-mail
-                  </label>
-                  <input
-                    id="contact-email"
-                    name="email"
-                    type="email"
-                    required
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder="seu@email.com"
-                    className="w-full px-4 py-3 rounded-xl bg-dark border border-dark-border text-white placeholder-muted-text/50 focus:border-primary focus:ring-1 focus:ring-primary/30 transition-all duration-300 outline-none"
-                  />
-                </div>
+                {/* E-mail - apenas para trabalhe conosco */}
+                {formType === 'trabalhe' && (
+                  <div>
+                    <label htmlFor="contact-email" className="block text-sm font-medium text-muted-text mb-2">
+                      E-mail
+                    </label>
+                    <input
+                      id="contact-email"
+                      name="Email"
+                      type="email"
+                      required
+                      value={formData.email}
+                      onChange={handleChange}
+                      placeholder="seu@email.com"
+                      className="w-full px-4 py-3 rounded-xl bg-dark border border-dark-border text-white placeholder-muted-text/50 focus:border-primary focus:ring-1 focus:ring-primary/30 transition-all duration-300 outline-none"
+                    />
+                  </div>
+                )}
 
                 {/* Telefone */}
                 <div>
-                  <label
-                    htmlFor="contact-phone"
-                    className="block text-sm font-medium text-muted-text mb-2"
-                  >
+                  <label htmlFor="contact-phone" className="block text-sm font-medium text-muted-text mb-2">
                     Telefone / WhatsApp
                   </label>
                   <input
                     id="contact-phone"
-                    name="phone"
+                    name="Telefone"
                     type="tel"
+                    required
                     value={formData.phone}
                     onChange={handleChange}
                     placeholder="(11) 99999-9999"
@@ -244,25 +278,41 @@ export default function Contact() {
                   />
                 </div>
 
-                {/* Mensagem */}
-                <div>
-                  <label
-                    htmlFor="contact-message"
-                    className="block text-sm font-medium text-muted-text mb-2"
-                  >
-                    Mensagem
-                  </label>
-                  <textarea
-                    id="contact-message"
-                    name="message"
-                    required
-                    rows={4}
-                    value={formData.message}
-                    onChange={handleChange}
-                    placeholder="Conte-nos como podemos ajudar..."
-                    className="w-full px-4 py-3 rounded-xl bg-dark border border-dark-border text-white placeholder-muted-text/50 focus:border-primary focus:ring-1 focus:ring-primary/30 transition-all duration-300 outline-none resize-none"
-                  />
-                </div>
+                {/* Mensagem - apenas para envie uma mensagem */}
+                {formType === 'mensagem' && (
+                  <div>
+                    <label htmlFor="contact-message" className="block text-sm font-medium text-muted-text mb-2">
+                      Mensagem
+                    </label>
+                    <textarea
+                      id="contact-message"
+                      name="Mensagem"
+                      required
+                      rows={4}
+                      value={formData.message}
+                      onChange={handleChange}
+                      placeholder="Conte-nos como podemos ajudar..."
+                      className="w-full px-4 py-3 rounded-xl bg-dark border border-dark-border text-white placeholder-muted-text/50 focus:border-primary focus:ring-1 focus:ring-primary/30 transition-all duration-300 outline-none resize-none"
+                    />
+                  </div>
+                )}
+
+                {/* Currículo - apenas para trabalhe conosco */}
+                {formType === 'trabalhe' && (
+                  <div>
+                    <label htmlFor="contact-cv" className="block text-sm font-medium text-muted-text mb-2">
+                      Anexar Currículo (PDF, DOC, DOCX - Máx 5MB)
+                    </label>
+                    <input
+                      id="contact-cv"
+                      name="Curriculo"
+                      type="file"
+                      accept=".pdf,.doc,.docx"
+                      required
+                      className="w-full px-4 py-3 rounded-xl bg-dark border border-dark-border text-white file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-primary/10 file:text-primary hover:file:bg-primary/20 transition-all duration-300 outline-none cursor-pointer"
+                    />
+                  </div>
+                )}
 
                 {/* Botão de envio */}
                 <motion.button
@@ -277,10 +327,10 @@ export default function Contact() {
                   }`}
                 >
                   {isSubmitted ? (
-                    '✓ Mensagem Enviada!'
+                    '✓ Enviado com sucesso!'
                   ) : (
                     <>
-                      Enviar Mensagem <Send size={18} />
+                      {formType === 'mensagem' ? 'Enviar Mensagem' : 'Enviar Currículo'} <Send size={18} />
                     </>
                   )}
                 </motion.button>

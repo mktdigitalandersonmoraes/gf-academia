@@ -6,7 +6,7 @@ import { fadeInLeft, fadeInRight, staggerContainer, staggerItem } from '../lib/a
 
 /** Números / estatísticas da academia */
 const stats = [
-  { icon: Users, value: '2.000+', label: 'Alunos Ativos' },
+  { icon: Users, value: '3.000+', label: 'Alunos Ativos' },
   { icon: Clock, value: '14+', label: 'Anos de Experiência' },
 ]
 
