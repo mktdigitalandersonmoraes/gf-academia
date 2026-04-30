@@ -120,7 +120,7 @@ export default function Footer() {
             © {new Date().getFullYear()} GF Academia. Todos os direitos reservados.
           </p>
           <p className="text-muted-text/50 text-xs">
-            Feito com 🧡 para transformar vidas
+            Criado por mktdigitalandersonmoraes@gmail.com
           </p>
         </div>
       </motion.div>
