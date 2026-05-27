@@ -40,8 +40,6 @@ const locations = [
     name: 'Canhema',
     address: 'Rua Vinte e Seis de Abril, 20 - Canhema, Diadema/SP',
     image: '/images/unidade-canhema.webp',
-    preVenda: true,
-    preVendaPrice: 'R$ 49,99',
     whatsapp: 'https://api.whatsapp.com/send?phone=5511956308853&text=Ol%C3%A1%2C+Gostaria+de+receber+mais+informa%C3%A7%C3%B5es',
   },
 ]
